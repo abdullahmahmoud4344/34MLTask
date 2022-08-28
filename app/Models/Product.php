@@ -22,6 +22,13 @@ class Product extends Model
         return $this->hasMany(Variant::class);
     }
 
+    public function scopeFilterBy($query, $filters)
+    {
+        $namespace = 'App\Filters\Product';
+        $filter = new FilterBuilder($query, $filters, $namespace);
+
+        return $filter->apply();
+    }
     //attributes
     public function getDefaultVariantAttribute()
     {

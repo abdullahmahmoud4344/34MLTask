@@ -18,9 +18,9 @@ class Variant extends Model
     {
         return $this->belongsTo(Product::class);
     }
-    public function options()
+    public function option()
     {
-        return $this->hasMany(Option::class);
+        return $this->belongsTo(Option::class);
     }
 
     //attributes

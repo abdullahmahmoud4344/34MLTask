@@ -13,7 +13,6 @@ class Product extends Model
         'id'
     ];
     public $timestamps = false;
-    protected $with = ['variants', 'options'];
     protected $appends = ['default_variant'];
 
     //relations
@@ -23,7 +22,7 @@ class Product extends Model
     }
     public function options()
     {
-        return $this->hasManyThrough(Option::class, Variant::class);
+        return $this->hasMany(Option::class);
     }
 
     //filter

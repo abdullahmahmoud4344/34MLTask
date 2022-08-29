@@ -25,7 +25,8 @@ class VariantTableSeeder extends Seeder
                 'price' => 19.2,
                 'stock' => 50,
                 'is_in_stock' => true,
-                'product_id' => 1
+                'product_id' => 1,
+                'option_id' => 1
             ),
             1 =>
             array(
@@ -34,7 +35,8 @@ class VariantTableSeeder extends Seeder
                 'price' => 19.2,
                 'stock' => 50,
                 'is_in_stock' => true,
-                'product_id' => 2
+                'product_id' => 2,
+                'option_id' => 1
             ),
             2 =>
             array(
@@ -43,7 +45,8 @@ class VariantTableSeeder extends Seeder
                 'price' => 50,
                 'stock' => 50,
                 'is_in_stock' => true,
-                'product_id' => 3
+                'product_id' => 3,
+                'option_id' => 1
             ),
             3 =>
             array(
@@ -52,7 +55,8 @@ class VariantTableSeeder extends Seeder
                 'price' => 50,
                 'stock' => 50,
                 'is_in_stock' => true,
-                'product_id' => 4
+                'product_id' => 4,
+                'option_id' => 1
             ),
         ));
     }

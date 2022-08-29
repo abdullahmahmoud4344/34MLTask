@@ -22,28 +22,28 @@ class OptionTableSeeder extends Seeder
                 'id' => 1,
                 'name' => 'size',
                 'values' => '["s", "m", "l"]',
-                'variant_id' => 1
+                'product_id' => 2
             ),
             1 =>
             array(
                 'id' => 2,
                 'name' => 'color',
                 'values' => '["Red", "Green", "Yellow"]',
-                'variant_id' => 1
+                'product_id' => 1
             ),
             2 =>
             array(
                 'id' => 3,
                 'name' => 'size',
                 'values' => '["s", "m", "l"]',
-                'variant_id' => 2
+                'product_id' => 2
             ),
             3 =>
             array(
                 'id' => 4,
                 'name' => 'size',
                 'values' => '["s", "m", "l"]',
-                'variant_id' => 3
+                'product_id' => 3
             ),
         ));
     }

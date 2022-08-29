@@ -45,4 +45,20 @@ class ProductFilterTest extends TestCase
                 'product_id' => 2,
             ])->assertJsonCount(2);
     }
+    public function test_product_cpmpound_filter_by_max_price_average_rating()
+    {
+        //create 5 products product t-shirt has an id of 1  and jacket has an id of 2 and both having rating 3
+        $this->seed(ProductTableSeeder::class);
+
+        //create 4 variants assume that only products t-shirt and jacket has price less than 31
+        $this->seed(VariantTableSeeder::class);
+
+        $filters = ['max_price' => 30, 'average_rating' => 3];
+        $this->json('get', '/api/products', $filters)
+            ->assertJsonFragment([
+                'product_id' => 1,
+                'product_id' => 2,
+                'average_rating' => 3
+            ])->assertJsonCount(2);
+    }
 }

@@ -5,26 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Variant extends Model
+class OptionValue extends Model
 {
     use HasFactory;
     protected $guarded = [
         'id'
     ];
-    protected $with = ['optionValues'];
-    public $timestamps = false;
-
-    //relations
-    public function product()
+    public function variannt()
     {
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Variant::class);
     }
     public function option()
     {
         return $this->belongsTo(Option::class);
-    }
-    public function optionValues()
-    {
-        return $this->hasMany(OptionValue::class);
     }
 }

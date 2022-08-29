@@ -4,11 +4,10 @@ namespace App\Listeners;
 
 use App\Models\Product;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
 
 
-class ProductOutOfStockListener
+class ProductOutOfStockListener implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -30,8 +29,8 @@ class ProductOutOfStockListener
     public function handle()
     {
         Mail::send('vendor.mail.html.message', function ($message) {
-            $message->to('admin@34ml.com');
-            $message->subject('New notification');
+            $message->to(env('ADMIN_EMAIL'));
+            $message->subject('Product Out of Stock');
             $message->line('Product Out Of Stock' . $this->product->name);
         });
     }

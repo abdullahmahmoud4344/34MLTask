@@ -11,6 +11,7 @@ class Variant extends Model
     protected $guarded = [
         'id'
     ];
+
     public $timestamps = false;
 
     public function product()
@@ -19,8 +20,9 @@ class Variant extends Model
     }
     public function options()
     {
-        return $this->belongsToMany(Option::class);
+        return $this->hasMany(Option::class);
     }
+
     //attributes
     public function getoption1Attribute(): string
     {

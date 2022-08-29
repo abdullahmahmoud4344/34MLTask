@@ -12,13 +12,12 @@ class Option extends Model
     protected $casts = [
         'values' => 'array'
     ];
-    protected $with = ['variants'];
+    protected $with = ['variant'];
     public $timestamps = false;
 
     //relations
-    public function variants()
+    public function variant()
     {
-        return $this->belongsToMany(Variant::class);
+        return $this->belongsTo(Variant::class);
     }
-    
 }

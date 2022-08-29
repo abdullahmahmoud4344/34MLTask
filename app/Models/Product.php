@@ -13,13 +13,17 @@ class Product extends Model
         'id'
     ];
     public $timestamps = false;
-    protected $with = ['variants'];
-    protected $appends = ['options', 'default_variant'];
+    protected $with = ['variants', 'options'];
+    protected $appends = ['default_variant'];
 
     //relations
     public function variants()
     {
         return $this->hasMany(Variant::class);
+    }
+    public function options()
+    {
+        return $this->hasManyThrough(Option::class, Variant::class);
     }
 
     //filter
@@ -36,15 +40,5 @@ class Product extends Model
         $variants = $this->variants;
         if ($variants)
             return $variants->sortBy('price')->first();
-    }
-
-    public function getOptionsAttribute()
-    {
-        $variants = $this->variants;
-        $options = [];
-        foreach ($variants as $variant) {
-            array_push($options, $variant->options);
-        }
-        return $options;
     }
 }

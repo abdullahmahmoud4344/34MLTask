@@ -23,14 +23,35 @@ class ProductTableSeeder extends Seeder
                 'id' => 1,
                 'title' => "T-shirts",
                 'is_in_stock' => true,
-                'average_rating' => 0.0
+                'average_rating' => 3.0
             ),
             1 =>
             array(
                 'id' => 2,
                 'title' => "Jackets",
                 'is_in_stock' => true,
-                'average_rating' => 0.0,
+                'average_rating' => 3.0,
+            ),
+            2 =>
+            array(
+                'id' => 3,
+                'title' => "Shorts",
+                'is_in_stock' => true,
+                'average_rating' => 5.0,
+            ),
+            3 =>
+            array(
+                'id' => 4,
+                'title' => "Shoes",
+                'is_in_stock' => true,
+                'average_rating' => 6.0,
+            ),
+            4 =>
+            array(
+                'id' => 5,
+                'title' => "Wallet",
+                'is_in_stock' => true,
+                'average_rating' => 8.0,
             ),
         ));
     }

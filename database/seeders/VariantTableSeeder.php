@@ -22,7 +22,7 @@ class VariantTableSeeder extends Seeder
             array(
                 'id' => 1,
                 'title' => "short sleeve",
-                'price' => 99.2,
+                'price' => 19.2,
                 'stock' => 50,
                 'is_in_stock' => true,
                 'product_id' => 1
@@ -30,11 +30,29 @@ class VariantTableSeeder extends Seeder
             1 =>
             array(
                 'id' => 2,
-                'title' => "short sleeve",
-                'price' => 99.2,
+                'title' => "long sleeve",
+                'price' => 19.2,
                 'stock' => 50,
                 'is_in_stock' => true,
-                'product_id' => 1
+                'product_id' => 2
+            ),
+            2 =>
+            array(
+                'id' => 3,
+                'title' => "cotton",
+                'price' => 50,
+                'stock' => 50,
+                'is_in_stock' => true,
+                'product_id' => 3
+            ),
+            3 =>
+            array(
+                'id' => 4,
+                'title' => "sport",
+                'price' => 50,
+                'stock' => 50,
+                'is_in_stock' => true,
+                'product_id' => 4
             ),
         ));
     }

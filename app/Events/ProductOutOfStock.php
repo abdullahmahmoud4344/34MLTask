@@ -25,10 +25,4 @@ class ProductOutOfStock
     {
         $this->$product = $product;
     }
-
-   
-    public function broadcastOn()
-    {
-        return new PrivateChannel('channel-name');
-    }
 }

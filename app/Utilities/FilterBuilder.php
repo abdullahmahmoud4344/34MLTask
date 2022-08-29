@@ -2,6 +2,7 @@
 
 namespace App\Utilities;
 
+
 class FilterBuilder
 {
     protected $query;
@@ -14,9 +15,13 @@ class FilterBuilder
         $this->filters = $filters;
         $this->namespace = $namespace;
     }
-
+    /**
+     * Applies the given filers by instantiating a class with the given filter name
+     * and calls the handle function on the given query.
+     */
     public function apply()
     {
+
         foreach ($this->filters as $name => $value) {
             // converting snake case to pascal case
             $normailizedName = str_replace('_', '', ucwords($name, '_'));;
@@ -31,7 +36,7 @@ class FilterBuilder
             } else {
                 (new $class($this->query))->handle();
             }
-            return $this->query;
         }
+        return $this->query;
     }
 }

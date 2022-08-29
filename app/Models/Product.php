@@ -24,8 +24,11 @@ class Product extends Model
     {
         return $this->hasMany(Option::class);
     }
-
-    //filter
+    public function optionValues()
+    {
+        return $this->hasManyThrough(OptionValue::class, Variant::class);
+    }
+    //scopes
     public function scopeFilterBy($query, $filters)
     {
         $namespace = 'App\Filters\Product';

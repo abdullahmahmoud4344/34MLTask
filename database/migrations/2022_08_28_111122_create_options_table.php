@@ -18,7 +18,9 @@ return new class extends Migration
         Schema::create('options', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->json('values');
+            $table->string('values');
+            $table->unsignedBigInteger('variant_id')->nullable();
+            $table->foreign('variant_id')->references('id')->on('variants')->onDelete('cascade');
             $table->timestamps();
         });
     }
